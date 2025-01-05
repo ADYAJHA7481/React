@@ -31,6 +31,21 @@ export default function TodoList() {
         )      
     };
 
+    let UpperCaseOne = (id) => {
+        setTodos((todos) => 
+            todos.map((todo) => {
+                if(todo.id == id) {
+                return{
+                    ...todo,
+                    task: todo.task.toUpperCase(),
+                };            
+                } else {
+                    return todo;
+                }
+        })
+    );
+    };
+
     return(
         <div>
             <input placeholder="add a task" value={newTodo} onChange={updateTodoValue}/><br />
@@ -44,6 +59,7 @@ export default function TodoList() {
                         <span>{todo.task}</span>
                         &nbsp;&nbsp;&nbsp;            
                       <button onClick={() =>deleteTodo(todo.id)}>delete</button>
+                      <button onClick={() =>UpperCaseOne(todo.id)}> UpperCase One</button>
                     </li>
                 ))}
             </ul>
