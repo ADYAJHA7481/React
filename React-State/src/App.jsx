@@ -4,9 +4,9 @@ import Lottery from './Lottery';
 function App() {
 return(
   <>
-    <Lottery/>
+    <Lottery n={4} winningSum={13}/>
   </>
-);
+);    
  
 }
 
